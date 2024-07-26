@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{54C40285-0C39-4644-99E5-CC56FBBCB93E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MPA_Creative</RootNamespace>
+    <AssemblyName>MPA Creative</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>MPA_Icon_Red.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GlobalHooks\Combination.cs" />
+    <Compile Include="GlobalHooks\Hook.cs" />
+    <Compile Include="GlobalHooks\HotKeys\HotKeyArgs.cs" />
+    <Compile Include="GlobalHooks\HotKeys\HotKeySet.cs" />
+    <Compile Include="GlobalHooks\HotKeys\HotKeySetCollection.cs" />
+    <Compile Include="GlobalHooks\HotKeys\HotKeySetsListener.cs" />
+    <Compile Include="GlobalHooks\IKeyboardEvents.cs" />
+    <Compile Include="GlobalHooks\IKeyboardMouseEvents.cs" />
+    <Compile Include="GlobalHooks\IMouseEvents.cs" />
+    <Compile Include="GlobalHooks\Implementation\AppEventFacade.cs" />
+    <Compile Include="GlobalHooks\Implementation\AppKeyListener.cs" />
+    <Compile Include="GlobalHooks\Implementation\AppMouseListener.cs" />
+    <Compile Include="GlobalHooks\Implementation\BaseListener.cs" />
+    <Compile Include="GlobalHooks\Implementation\ButtonSet.cs" />
+    <Compile Include="GlobalHooks\Implementation\Callback.cs" />
+    <Compile Include="GlobalHooks\Implementation\Chord.cs" />
+    <Compile Include="GlobalHooks\Implementation\EventFacade.cs" />
+    <Compile Include="GlobalHooks\Implementation\GlobalEventFacade.cs" />
+    <Compile Include="GlobalHooks\Implementation\GlobalKeyListener.cs" />
+    <Compile Include="GlobalHooks\Implementation\GlobalMouseListener.cs" />
+    <Compile Include="GlobalHooks\Implementation\KeyboardState.cs" />
+    <Compile Include="GlobalHooks\Implementation\KeyListener.cs" />
+    <Compile Include="GlobalHooks\Implementation\KeysExtensions.cs" />
+    <Compile Include="GlobalHooks\Implementation\MouseListener.cs" />
+    <Compile Include="GlobalHooks\Implementation\Subscribe.cs" />
+    <Compile Include="GlobalHooks\KeyCombinationExtensions.cs" />
+    <Compile Include="GlobalHooks\KeyDownTxtEventArgs.cs" />
+    <Compile Include="GlobalHooks\KeyEventArgsExt.cs" />
+    <Compile Include="GlobalHooks\KeyPressEventArgsExt.cs" />
+    <Compile Include="GlobalHooks\MouseEventExtArgs.cs" />
+    <Compile Include="GlobalHooks\Sequence.cs" />
+    <Compile Include="GlobalHooks\SequenceBase.cs" />
+    <Compile Include="GlobalHooks\WinApi\AppMouseStruct.cs" />
+    <Compile Include="GlobalHooks\WinApi\CallbackData.cs" />
+    <Compile Include="GlobalHooks\WinApi\HookHelper.cs" />
+    <Compile Include="GlobalHooks\WinApi\HookIds.cs" />
+    <Compile Include="GlobalHooks\WinApi\HookNativeMethods.cs" />
+    <Compile Include="GlobalHooks\WinApi\HookProcedure.cs" />
+    <Compile Include="GlobalHooks\WinApi\HookProcedureHandle.cs" />
+    <Compile Include="GlobalHooks\WinApi\HookResult.cs" />
+    <Compile Include="GlobalHooks\WinApi\HotkeysNativeMethods.cs" />
+    <Compile Include="GlobalHooks\WinApi\KeyboardHookStruct.cs" />
+    <Compile Include="GlobalHooks\WinApi\KeyboardNativeMethods.cs" />
+    <Compile Include="GlobalHooks\WinApi\Messages.cs" />
+    <Compile Include="GlobalHooks\WinApi\MouseNativeMethods.cs" />
+    <Compile Include="GlobalHooks\WinApi\MouseStruct.cs" />
+    <Compile Include="GlobalHooks\WinApi\Point.cs" />
+    <Compile Include="GlobalHooks\WinApi\ThreadNativeMethods.cs" />
+    <Compile Include="MainUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainUI.Designer.cs">
+      <DependentUpon>MainUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MPALib.cs" />
+    <Compile Include="_LayerButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_LayerButton.Designer.cs">
+      <DependentUpon>_LayerButton.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainUI.resx">
+      <DependentUpon>MainUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="_LayerButton.resx">
+      <DependentUpon>_LayerButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MPA_Icon_Red.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
